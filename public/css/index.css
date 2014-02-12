@@ -1,0 +1,32 @@
+#navbar {
+  margin-bottom: 0px;
+}
+
+.sidebar {
+  height: 100%;
+  position: fixed;
+  width: 250px;
+}
+
+.sidebar > ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.sidebar > ul > li {
+  background: red;
+  min-height: 100px;
+}
+
+.sidebar > ul > li > .title {
+  background: gray;
+  text-align: center;
+  width: 100%;
+}
+
+.main-content {
+  background: red;
+  margin-left: 250px;
+  width: 100%;
+}
