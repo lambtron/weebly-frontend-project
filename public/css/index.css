@@ -1,32 +1,223 @@
-#navbar {
+nav#navbar {
+  background: #518DCA;
+  border-color: transparent;
+  border-radius: 0px;
+  height: 10px;
+  min-height: 42px;
   margin-bottom: 0px;
+}
+
+.navbar-brand {
+  padding: 0px 28px;
 }
 
 .sidebar {
   height: 100%;
   position: fixed;
-  width: 250px;
+  width: 234px;
 }
 
 .sidebar > ul {
+  background: #2C3E50;
   list-style: none;
+  height: 100%;
   margin: 0px;
   padding: 0px;
 }
 
 .sidebar > ul > li {
-  background: red;
   min-height: 100px;
 }
 
 .sidebar > ul > li > .title {
-  background: gray;
+  background: #4F657B;
+  color: #A1B7CF;
+  height: 32px;
+  padding-top: 6px;
   text-align: center;
   width: 100%;
+
+  /* Box shadow. */
+
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75), 0px -1px 2px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75), 0px -1px 2px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75), 0px -1px 2px 0px rgba(0,0,0,0.75);
+}
+
+ul#templates {
+
+}
+
+ul#templates > li {
+  margin: 10px auto;
+  width: 140px;
+}
+
+ul#templates li {
+  padding: 6px 14px;
+  width: 170px;
+
+  /* Rounded corners. */
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+ul#templates > li.template {
+  background-color: #518DCA;
+  border-color: #609CD9;
+  border-style: solid;
+  border-width: 1px;
+  color: #FFF;
+}
+
+ul#templates > li.template:first-child {
+  margin-top: 26px;
+}
+
+ul#templates > li:last-child {
+  padding: 0px;
+}
+
+ul#templates #add-new-page {
+  background: transparent;
+  border-color: #556C83;
+  border-style: solid;
+  color: #FFF;
+  height: 34px;
+  margin-bottom: 20px;
+  padding: 6px 14px;
+  width: 170px;
+
+  /* Rounded corners. */
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+ul#templates > li {
+  position: relative;
+}
+
+ul#templates span.glyphicon {
+  color: #556C83;
+  position: absolute;
+}
+
+ul#templates span.glyphicon-pencil {
+  top: 9px;
+  right: 24px;
+}
+
+ul#templates span.glyphicon-plus, span.glyphicon-remove {
+  top: 9px;
+  right: 6px;
+}
+
+ul#elements {
+
+}
+
+ul#elements > li.element {
+  background-color: #34485C;
+  cursor: all-scroll;
+  display: inline-block;
+  height: 115px;
+  width: 115px;
+  padding: 0px;
+  margin: 1px;
+
+  /* Box shadows. */
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.3);
+
+  -webkit-box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.1);
+  -moz-box-shadow:    inset 1px 1px 0px 0px rgba(255, 255, 255, 0.1);
+  box-shadow:         inset 1px 1px 0px 0px rgba(255, 255, 255, 0.1);
+}
+
+ul#elements > li > .el-type {
+  background: url(/public/img/Element-Icons.png);
+  background-repeat: no-repeat;
+  height: 62px;
+  width: 62px;
+  margin: 0 auto;
+}
+
+ul#elements > li > .title {
+  background-position: 0 0;
+}
+
+ul#elements > li > .text {
+  background-position: -61px 0;
+}
+
+ul#elements > li > .image {
+  background-position: -116px 0;
+}
+
+ul#elements > li > .nav {
+  background-position: -170px 0;
+}
+
+ul#elements > li.element > .type {
+  color: #5F778F;
+  text-align: center;
 }
 
 .main-content {
-  background: red;
-  margin-left: 250px;
+  margin-left: 234px;
+  padding-top: 40px;
   width: 100%;
+}
+
+ul#nav-templates .template {
+  background-color: #97aabc;
+  border-color: #8498ac;
+  border-style: solid;
+  color: #FFF;
+  display: inline-block;
+  height: 42px;
+  margin: 0px 14px;
+  text-align: center;
+  padding-top: 7px;
+  width: 120px;
+
+  /* Rounded corners. */
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+ul#nav-templates .template:first-child {
+  margin: 0px;
+}
+
+.main-content .container {
+  position: relative;
+}
+
+.container .element {
+  display: inline-block;
+  position: absolute;
+}
+
+/* GENERAL CSS DECLARATIONS. */
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
+}
+
+/* Color the placeholder of input boxes. */
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #556C83;
 }

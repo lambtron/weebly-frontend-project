@@ -15,11 +15,13 @@
 
 	<!-- SPELLS -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//cdn.jsdelivr.net/jquery.ui/1.10.4/jquery-ui.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
 
 	<script src="/public/js/app.js"></script>
 	<script src="/public/js/controllers.js"></script>
+	<script src="/public/js/directives.js"></script>
 
 	<!-- Page specific js. -->
 	<script src="/public/js/index.js"></script>
@@ -28,48 +30,76 @@
 	<base href="/">
 </head>
 
-<body>
-	<nav id="navbar" class="navbar navbar-default" role="navigation">
+<body ng-controller="mainController">
+	<nav id="navbar" class="navbar navbar-default shadow" role="navigation">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#">Brand</a>
+			<a class="navbar-brand" href="#">
+				<img src="/public/img/Weebly-Logo.png" alt="Weebly" />
+			</a>
 		</div>
 	</nav>
 	<div class="sidebar">
 		<ul>
 			<li>
 				<div class="title">
-					Templates
+					TEMPLATES
 				</div>
 				<!-- PAGES -->
-				<ul>
-					<li>
+				<ul id="templates">
+					<li ng-repeat="page in state.pages track by $index" class="template shadow">
 					<!-- NG-REPEAT for an Array. -->
+						{{page.title}}
+						<span class="glyphicon glyphicon-pencil"
+									ng-click=""></span>
+						<span class="glyphicon glyphicon-remove"
+									ng-click="state.deletePage($index)"></span>
+					</li>
+					<li>
+						<input id="add-new-page" type="text" ng-model="state.newPageTitle" placeholder="ADD NEW PAGE" />
+						<span class="glyphicon glyphicon-plus"
+									ng-click="state.addPage()"></span>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<div class="title">
-					Elements
+					ELEMENTS
 				</div>
 				<!-- ELEMENTS -->
-				<ul>
-					<li>
-					<!-- Each is an object with different attributes. -->
+				<ul id="elements">
+					<li ng-repeat="element in state.elements track by $index" class="element">
+						<div class="el-type {{element.type}}" ng-draggable="{page: state.selectedPage}">
+						<!-- Image icon here. -->
+						</div>
+						<div class="type">
+							{{element.type}}
+						</div>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<div class="title">
-					Settings
+					SETTINGS
 				</div>
 			</li>
 		</ul>
 	</div>
 	<div class="main-content">
-		<div class="row">
-		<!-- NG-REPEAT on array of pages. -->
-		</div>
+		<div class="container">
+			<ul id="nav-templates">
+				<li ng-repeat="page in state.pages track by $index" class="template" ng-click="state.selectPage(page)">
+					{{page.title}}
+				</li>
+			</ul>
 
+			<!-- This is where you show all of the elements on the page. -->
+			<div ng-repeat="element in state.selectedPage.elements track by $index"
+					 style="top:{{element.location.y}}; left:{{element.location.x}}; width:{{element.size.x}}; height:{{element.size.y}}"
+					 class="element"
+					 ng-draggable>
+				<!-- Render the element based on its location, size, and type. -->
+			</div>
+		</div>
 	</div>
 </body>
 </html>
